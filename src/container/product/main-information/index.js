@@ -1,0 +1,1 @@
+export { MainInformation } from './MainInformation';

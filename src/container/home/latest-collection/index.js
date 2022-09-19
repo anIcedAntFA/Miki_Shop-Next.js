@@ -1,0 +1,1 @@
+export { LatestCollection } from './LatestCollection';

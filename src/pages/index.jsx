@@ -1,33 +1,57 @@
 import Page from 'src/components/Page';
-import MainLayout from 'src/layouts';
 import {
-  AboutSection,
-  BestSellerSection,
-  HeroSection,
-  LatestCollectionSection,
-  ProductCategorySection,
-} from 'src/sections/main/home';
-//always import from src folder, not "./", "../", "../../",...
+  About,
+  CircleIcon1,
+  CircleIcon2,
+  CircleIcon3,
+  FeaturedProducts,
+  Hero,
+  LatestCollection,
+  ProductCategory,
+} from 'src/container/home';
+import { getProducts } from 'src/fetching/products';
+import MainLayout from 'src/layouts/MainLayout';
 
 HomePage.getLayout = (page) => <MainLayout>{page}</MainLayout>;
 
-export default function HomePage() {
+export default function HomePage({ products }) {
   return (
-    <div>
+    <>
       <Page
         data={{
-          title: 'Miki Shop',
-          description: '',
+          title: 'Trang chủ',
+          description: 'Trang chủ',
           url: '',
           thumbnailUrl: '',
         }}
       />
-      <h1 className="text-green-500">Home Page</h1>
-      <HeroSection />
-      <AboutSection />
-      <BestSellerSection />
-      <LatestCollectionSection />
-      <ProductCategorySection />
-    </div>
+
+      <Hero />
+      <About />
+      <FeaturedProducts products={products} />
+      <LatestCollection />
+      <ProductCategory />
+      <CircleIcon1 />
+      <CircleIcon2 />
+      <CircleIcon3 />
+    </>
   );
 }
+export const getServerSideProps = async () => {
+  try {
+    const featuredProducts = await getProducts([], {
+      limit: 4,
+      sortBy: 'sold',
+      order: -1,
+    });
+
+    return {
+      props: {
+        products: featuredProducts.data.data.products || [],
+      },
+      // revalidate: 10 * 60, // 10 minutes
+    };
+  } catch (error) {
+    console.log(error);
+  }
+};

@@ -1,3 +1,99 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --toastify-color-light: #fff;
+  --toastify-color-dark: #121212;
+  --toastify-color-info: #3498db;
+  --toastify-color-success: #07bc0c;
+  --toastify-color-warning: #f1c40f;
+  --toastify-color-error: orange;
+  --toastify-color-transparent: rgba(255, 255, 255, 0.7);
+
+  --toastify-icon-color-info: var(--toastify-color-info);
+  --toastify-icon-color-success: var(--toastify-color-success);
+  --toastify-icon-color-warning: var(--toastify-color-warning);
+  --toastify-icon-color-error: var(--toastify-color-error);
+
+  --toastify-toast-width: 320px;
+  --toastify-toast-background: #fff;
+  --toastify-toast-min-height: 64px;
+  --toastify-toast-max-height: 800px;
+  --toastify-font-family: sans-serif;
+  --toastify-z-index: 9999;
+
+  --toastify-text-color-light: #757575;
+  --toastify-text-color-dark: #fff;
+
+  /** Used only for colored theme */
+  --toastify-text-color-info: #fff;
+  --toastify-text-color-success: #fff;
+  --toastify-text-color-warning: #fff;
+  --toastify-text-color-error: #fff;
+
+  --toastify-spinner-color: #616161;
+  --toastify-spinner-color-empty-area: #e0e0e0;
+
+  /** Used when no type is provided */
+  /** toast("**hello**")  */
+  --toastify-color-progress-light: linear-gradient(to right, #4cd964, #5ac8fa, #007aff, #34aadc, #5856d6, #ff2d55);
+  /** Used when no type is provided */
+  --toastify-color-progress-dark: #bb86fc;
+  --toastify-color-progress-info: var(--toastify-color-info);
+  --toastify-color-progress-success: var(--toastify-color-success);
+  --toastify-color-progress-warning: var(--toastify-color-warning);
+  --toastify-color-progress-error: var(--toastify-color-error);
+}
+
+@layer base {
+  input {
+    @apply caret-primary-1 focus-within:border-primary-1 focus-within:border-2 outline-none;
+  }
+}
+
+@layer components {
+  .wrapper {
+    @apply max-w-1440-px m-auto body bg-wrapper overflow-y-clip;
+  }
+  .sub-wrapper {
+    @apply m-auto px-16 body bg-wrapper;
+  }
+  .container {
+    @apply px-152-px xs:px-4;
+  }
+
+  .display {
+    @apply font-secondary font-normal text-8xl leading-106-px text-primary uppercase;
+  }
+  .heading {
+    @apply font-secondary font-bold text-5xl leading-58-px text-primary uppercase;
+  }
+
+  .heading-1 {
+    @apply font-primary font-bold text-5xl leading-58-px text-primary;
+  }
+  .heading-2 {
+    @apply font-primary font-bold text-32-px leading-10 text-primary;
+  }
+  .heading-3 {
+    @apply font-primary font-semibold text-2xl leading-8 text-primary;
+  }
+  .heading-4 {
+    @apply font-primary font-bold text-2xl leading-8 text-primary;
+  }
+  .heading-5 {
+    @apply font-primary font-bold text-xl leading-7 text-primary;
+  }
+  .subtitle-1,
+  .btn {
+    @apply font-primary font-bold text-base leading-6 text-primary;
+  }
+  .subtitle-2,
+  .body {
+    @apply font-primary font-medium text-base leading-6 text-primary;
+  }
+  .caption {
+    @apply font-primary font-medium text-sm leading-5 text-primary;
+  }
+}

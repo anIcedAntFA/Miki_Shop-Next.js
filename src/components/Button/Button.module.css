@@ -1,0 +1,46 @@
+.root {
+  @apply inline-flex items-center gap-2 select-none;
+}
+
+.icon + .title {
+  @apply ml-2;
+}
+
+.normal {
+  @apply justify-center h-10 py-2 px-46-px rounded-primary bg-neutral-5 hover:shadow-btn-normal hover:scale-95 ease-in-out duration-400;
+}
+
+.primary {
+  @apply justify-center h-10 py-2 px-[44px] rounded-primary border-2 border-primary bg-primary text-neutral-5 hover:bg-neutral-5 
+  hover:text-primary ease-in-out duration-600 shadow-xl;
+}
+
+.outline {
+  @apply justify-center py-[7px] px-6 rounded-primary border-2 border-primary hover:bg-primary hover:text-white bg-neutral-5 
+  ease-in-out duration-600 shadow-xl;
+}
+
+.rounded {
+  @apply py-2 px-6 rounded-full border border-primary hover:bg-primary hover:text-white bg-neutral-5 
+  ease-in-out duration-600 shadow-xl;
+}
+
+.small {
+  @apply w-28 py-6;
+}
+
+.large {
+  @apply py-8;
+}
+
+.text {
+  @apply font-primary font-medium text-base leading-6 text-primary;
+}
+
+.icon {
+  /* @apply ; */
+}
+
+.disabled {
+  @apply pointer-events-none opacity-50;
+}

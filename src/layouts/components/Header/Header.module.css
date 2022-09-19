@@ -1,0 +1,11 @@
+.header {
+  @apply relative z-header container;
+}
+
+.nav {
+  @apply flex justify-between items-end pt-4 pb-6;
+}
+
+.active {
+  @apply font-bold;
+}
