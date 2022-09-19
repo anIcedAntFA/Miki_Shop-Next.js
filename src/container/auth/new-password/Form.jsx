@@ -1,6 +1,6 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import classNames from 'classnames/bind';
-import { signIn } from 'next-auth/react';
+// import { signIn } from 'next-auth/react';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 
